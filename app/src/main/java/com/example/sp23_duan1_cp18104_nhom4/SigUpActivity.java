@@ -75,7 +75,7 @@ public class SigUpActivity extends AppCompatActivity {
                                     Toast.makeText(SigUpActivity.this, "Đăng ký thất bại!" + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(SigUpActivity.this, MainActivity.class));
+                                    startActivity(new Intent(SigUpActivity.this, LoginActivity.class));
                                     finish();
                                 }
                             }
