@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".LoginActivity">
-
 
     <ImageView
         android:id="@+id/imageView3"
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Đăng nhập"
+        android:text="Đăng ký"
         android:textSize="50dp"
         android:textStyle="bold"
         android:textColor="@color/black"/>
@@ -28,13 +28,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-
         android:layout_marginTop="30dp"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:id="@+id/edEmail"
+            android:id="@+id/dkEmail"
             android:layout_height="wrap_content"
             android:hint="Nhập email"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -48,11 +47,26 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:id="@+id/edPassword"
+            android:id="@+id/dkPassword"
             android:maxLines="1"
             android:inputType="textPassword"
             android:layout_height="wrap_content"
             android:hint="Nhập mật khẩu" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        app:passwordToggleEnabled="true"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/dkrePassword"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:layout_height="wrap_content"
+            android:hint="Nhập lại mật khẩu" />
 
     </com.google.android.material.textfield.TextInputLayout>
     <LinearLayout
@@ -60,37 +74,20 @@
         android:layout_height="20dp">
 
     </LinearLayout>
-    <CheckBox
-        android:id="@+id/chkRememberPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Lưu mật khẩu" />
-    <TextView
-        android:id="@+id/tvquenmk"
-        android:layout_width="127dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="15dp"
-        android:textStyle="bold"
-        android:text="Quên mật khẩu ?"
-        android:textSize="15dp"
-        app:backgroundTint="@null" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnSigup"
             android:layout_width="130dp"
             android:background="@drawable/csstomtron"
             app:backgroundTint="@null"
             android:textColor="@color/black"
             android:layout_marginRight="20dp"
             android:layout_height="wrap_content"
-            android:text="Đăng nhập" />
+            android:text="Đăng ký" />
 
     </LinearLayout>
     <LinearLayout
@@ -102,18 +99,17 @@
         >
 
         <TextView
-            android:layout_width="165dp"
-            android:layout_height="32dp"
+            android:layout_width="188dp"
+            android:layout_height="33dp"
             android:gravity="center"
-            android:text="Bạn chưa có tài khoản ?"
+            android:text="Bạn đã có tài khoản ?"
             android:textColor="@color/black"
             android:textSize="15dp" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/dk"
-            android:text="Đăng ký"
+            android:id="@+id/dn"
+            android:text="Đăng nhập"
             android:textSize="15dp"
             android:textColor="@color/teal_200"
             />
@@ -125,5 +121,4 @@
         android:layout_gravity="center|bottom"
         android:layout_marginBottom="20dp"
         android:visibility="gone" />
-
 </LinearLayout>
