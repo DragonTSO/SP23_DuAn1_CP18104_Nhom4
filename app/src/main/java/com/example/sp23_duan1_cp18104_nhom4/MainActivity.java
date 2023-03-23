@@ -24,14 +24,15 @@ import com.example.sp23_duan1_cp18104_nhom4.Fragment.Top10Fragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.doiMkFragment;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private NavigationView navigationView;
     private FrameLayout frameLayout;
 
     private TextView tv_header;
-//asdasdaaa
+
+    public static int maquyen = 0;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-public boolean onNavigationItemSelected(MenuItem item){
-    int id = item.getItemId();
-    if (id == R.id.nav_HD) {
+    public boolean onNavigationItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if (id == R.id.nav_HD) {
             //hiển thị màn hình bài 1
             toolbar.setTitle("Quản lý phiếu mượn");
             replaceFragment(new HoaDonFragment());
@@ -83,15 +84,15 @@ public boolean onNavigationItemSelected(MenuItem item){
             replaceFragment(new MenuFragment());
             // replaceFragment();
         } else if (id == R.id.nav_db) {
-            toolbar.setTitle("Quản lý sách");
+            toolbar.setTitle("Quản lý bàn");
             replaceFragment(new BanAnFragment());
-           } // replaceFragment();
+        } // replaceFragment();
         else if (id == R.id.nav_dt) {
             toolbar.setTitle("Doanh thu");
             replaceFragment(new DoanhThuFragment());
             // replaceFragment();
         }
-     else if (id == R.id.nav_topmonan) {
+        else if (id == R.id.nav_topmonan) {
             toolbar.setTitle("10 Quyển sách mượn nhiều nhất");
             replaceFragment(new Top10Fragment());
             // replaceFragment();
@@ -108,7 +109,7 @@ public boolean onNavigationItemSelected(MenuItem item){
         }
         drawerLayout.closeDrawer(navigationView);
         return true;
-}
+    }
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(navigationView)) {
