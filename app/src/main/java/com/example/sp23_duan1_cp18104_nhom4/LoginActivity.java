@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
            public void onClick(View view) {
                startActivity(new Intent(LoginActivity.this,MainActivity.class));
                //s
+               //asd
            }
        });
 
