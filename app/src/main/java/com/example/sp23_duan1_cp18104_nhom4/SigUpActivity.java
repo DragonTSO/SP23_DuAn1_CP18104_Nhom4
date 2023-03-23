@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SigUpActivity extends AppCompatActivity {
     EditText dkEmail,dkPassword,dkrePassword;
     Button btnSigUp;
-    TextView dn;
+    TextView dn;//k
     FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
