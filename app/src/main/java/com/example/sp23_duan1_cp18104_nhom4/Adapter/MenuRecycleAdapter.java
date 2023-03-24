@@ -133,8 +133,8 @@ return list.size();
         private TextView ma,ten,soluong,gia;
         public UserViewHodel(@NonNull View itemView) {
             super(itemView);
-
-            img_delete= itemView.findViewById(R.id.imd_delete);
+            img_monan= itemView.findViewById(R.id.img_mon);
+            img_delete= itemView.findViewById(R.id.img_delete);
             ma = itemView.findViewById(R.id.txt_Mamon);
             ten = itemView.findViewById(R.id.txt_Tenmon);
             soluong = itemView.findViewById(R.id.txt_Soluong);

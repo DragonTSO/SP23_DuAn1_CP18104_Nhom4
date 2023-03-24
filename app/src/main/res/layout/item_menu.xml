@@ -16,8 +16,8 @@
             <ImageView
                 android:src="@drawable/logo"
                 android:id="@+id/img_mon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="62dp"
+                android:layout_height="60dp"
                 android:layout_marginVertical="30dp"
                 android:layout_marginLeft="10dp">
 
@@ -71,7 +71,7 @@
             <ImageView
                 android:layout_marginVertical="30dp"
                 android:src="@drawable/ic_delete"
-                android:id="@+id/imd_delete"
+                android:id="@+id/img_delete"
                 android:layout_width="50dp"
                 android:layout_height="50dp">
 
