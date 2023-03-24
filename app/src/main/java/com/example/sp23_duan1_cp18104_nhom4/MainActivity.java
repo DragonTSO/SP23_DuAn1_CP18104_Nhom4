@@ -74,16 +74,16 @@ public boolean onNavigationItemSelected(MenuItem item){
     int id = item.getItemId();
     if (id == R.id.nav_HD) {
             //hiển thị màn hình bài 1
-            toolbar.setTitle("Quản lý phiếu mượn");
+            toolbar.setTitle("Quản lý Hóa Đơn");
             replaceFragment(new HoaDonFragment());
             //  replaceFragment();
         } else if (id == R.id.nav_menu) {
             // hiển thị màn hình bài 2
-            toolbar.setTitle("Quản lý loại sách");
+            toolbar.setTitle("Quản lý MENU");
             replaceFragment(new MenuFragment());
             // replaceFragment();
         } else if (id == R.id.nav_db) {
-            toolbar.setTitle("Quản lý sách");
+            toolbar.setTitle("Quản lý BÀn");
             replaceFragment(new BanAnFragment());
            } // replaceFragment();
         else if (id == R.id.nav_dt) {
@@ -92,7 +92,7 @@ public boolean onNavigationItemSelected(MenuItem item){
             // replaceFragment();
         }
      else if (id == R.id.nav_topmonan) {
-            toolbar.setTitle("10 Quyển sách mượn nhiều nhất");
+            toolbar.setTitle("Top 10 Món ăn yêu thích");
             replaceFragment(new Top10Fragment());
             // replaceFragment();
         } else if (id == R.id.nav_KH) {

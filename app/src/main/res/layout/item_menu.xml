@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+ android:layout_marginTop="5dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/csstomtron"
+    android:layout_height="130dp"
+    >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <ImageView
+                android:src="@drawable/logo"
+                android:id="@+id/img_mon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginVertical="30dp"
+                android:layout_marginLeft="10dp">
+
+            </ImageView>
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="110dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_Mamon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Mã :">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/txt_Tenmon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Tên món :">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/txt_Soluong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Số Lượng :">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/txt_Gia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Giá :">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_marginVertical="30dp"
+                android:src="@drawable/ic_delete"
+                android:id="@+id/imd_delete"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+            </ImageView>
+
+        </LinearLayout>
+
+
+
+
+</LinearLayout>
