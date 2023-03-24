@@ -17,6 +17,9 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".AddTableActivity"
+            android:exported="false" />
+        <activity
             android:name=".SigUpActivity"
             android:exported="false" />
         <activity
