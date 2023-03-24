@@ -23,6 +23,7 @@ public class CreateDatabase extends SQLiteOpenHelper {
     public static String TBL_DONDAT_TINHTRANG = "TINHTRANG";
     public static String TBL_DONDAT_TONGTIEN = "TONGTIEN";
     public static String TBL_DONDAT_MABAN = "MABAN";
+    //bảng menu
     public  static final String DB_MENU="create table MENU(" +
             "MaMon INTEGER primary key autoincrement," +
             "TenMon TEXT not null ," +
