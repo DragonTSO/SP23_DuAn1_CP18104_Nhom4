@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 
+import com.example.sp23_duan1_cp18104_nhom4.Database.CreateDatabase;
 import com.example.sp23_duan1_cp18104_nhom4.Model.Menu;
 
 import java.util.ArrayList;
@@ -13,10 +14,10 @@ import java.util.ArrayList;
 public class MenuDAO {
     private Context mContext;
     private SQLiteDatabase database;
-    private  Database db;
+    private CreateDatabase db;
     public MenuDAO(Context context){
         this.mContext = context;
-        db = new Database(mContext);
+        db = new CreateDatabase(mContext);
         database =  db.getWritableDatabase();
     }
     public int Insert(Menu menu){
