@@ -7,6 +7,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class CreateDatabase extends SQLiteOpenHelper {
+    public CreateDatabase(@Nullable Context context) {
+        super(context, "ACE RESTAURANT", null, 1);
+    }
+
     public static String TBL_BAN = "BAN";
     public static String TBL_DONDAT = "DONDAT";
     //Bảng bàn
@@ -19,10 +23,14 @@ public class CreateDatabase extends SQLiteOpenHelper {
     public static String TBL_DONDAT_TINHTRANG = "TINHTRANG";
     public static String TBL_DONDAT_TONGTIEN = "TONGTIEN";
     public static String TBL_DONDAT_MABAN = "MABAN";
+    //bảng menu
+    public  static final String DB_MENU="create table MENU(" +
+            "MaMon INTEGER primary key autoincrement," +
+            "TenMon TEXT not null ," +
+            "Soluong INTEGER not null ," +
+            "Gia INTEGER not null );";
 
-    public CreateDatabase(@Nullable Context context) {
-        super(context, "ACE RESTAURANT", null, 1);
-    }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -32,14 +40,16 @@ public class CreateDatabase extends SQLiteOpenHelper {
                 +TBL_DONDAT_MABAN+ " INTEGER, " + " INTEGER, " +TBL_DONDAT_NGAYDAT+ " TEXT, "+TBL_DONDAT_TONGTIEN+" TEXT,"
                 +TBL_DONDAT_TINHTRANG+ " TEXT )" ;
 
+
         db.execSQL(tblBAN);
         db.execSQL(tblDONDAT);
+        db.execSQL(DB_MENU);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS MENU");
     }
     public SQLiteDatabase open(){
         return this.getWritableDatabase();
