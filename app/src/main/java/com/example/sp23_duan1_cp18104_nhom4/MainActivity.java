@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -15,14 +16,19 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.sp23_duan1_cp18104_nhom4.Adapter.HomeAdapter;
+import com.example.sp23_duan1_cp18104_nhom4.DTO.HomeDTO;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.BanAnFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.DoanhThuFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.HoaDonFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.KhachHangFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.MenuFragment;
+import com.example.sp23_duan1_cp18104_nhom4.Fragment.NhanVienFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.Top10Fragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.doiMkFragment;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
@@ -42,12 +48,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         frameLayout = findViewById(R.id.frameLayout);
         toolbar = findViewById(R.id.toolBar);
         navigationView = findViewById(R.id.navigationView);
+        GridView gridView = findViewById(R.id.gridView);
 
+        ArrayList<HomeDTO> list = new ArrayList<>();
+        list.add(new HomeDTO(R.drawable.bobft,"Beef Steak","90 000 VNĐ"));
+        list.add(new HomeDTO(R.drawable.bohamraucu,"Bò Hầm Rau Củ","70 000 VNĐ"));
+        list.add(new HomeDTO(R.drawable.myy,"Mỳ Ý","50 000 VNĐ"));
+        list.add(new HomeDTO(R.drawable.khoaitaychien,"Khoai Tây Chiên","30 000 VNĐ"));
+        list.add(new HomeDTO(R.drawable.thitlonchienxu,"Thịt Kho Tàu","30 000 VNĐ"));
+        list.add(new HomeDTO(R.drawable.suonchuangot,"Sườn Xào Chua Ngọt","35 000 VNĐ"));
+        list.add(new HomeDTO(R.drawable.gachienmamtoi,"Gà Chiên Mắm ","65 000 VNĐ"));
+        list.add(new HomeDTO(R.drawable.banhbotloc,"Bánh Bột Lọc","25 000 VNĐ"));
+        list.add(new HomeDTO(R.drawable.comtam,"Cơm Tấm","45 000 VNĐ"));
+        list.add(new HomeDTO(R.drawable.thitlonchienxu,"Thịt Lợn Chiên","50 000 VNĐ"));
 
-
+        HomeAdapter adapter = new HomeAdapter(list,this);
+        gridView.setAdapter(adapter);
 
         setSupportActionBar(toolbar);
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);
         toggle.syncState();
 
@@ -97,15 +115,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             // replaceFragment();
         }
 
-     else if (id == R.id.nav_topmonan) {
+        else if (id == R.id.nav_topmonan) {
             toolbar.setTitle("Top 10 Món ăn yêu thích");
         }
         else if (id == R.id.nav_topmonan) {
             toolbar.setTitle("10 Quyển sách mượn nhiều nhất");
-
             replaceFragment(new Top10Fragment());
             // replaceFragment();
-        } else if (id == R.id.nav_KH) {
+        }else if (id == R.id.nav_NV) {
+            toolbar.setTitle("Quản lý nhân viên");
+            replaceFragment(new NhanVienFragment());
+        }
+        else if (id == R.id.nav_KH) {
             toolbar.setTitle("Thêm người dùng");
             // replaceFragment();
             replaceFragment(new KhachHangFragment());

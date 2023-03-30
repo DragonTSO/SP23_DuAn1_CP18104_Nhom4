@@ -32,6 +32,10 @@
     <item android:title="Người Dùng">
         <menu>
             <item
+                android:id="@+id/nav_NV"
+                android:icon="@drawable/ic_monan"
+                android:title="Quản lý nhân viên" />
+            <item
                 android:id="@+id/nav_KH"
                 android:icon="@drawable/ic_monan"
                 android:title="Tai khoản KH" />

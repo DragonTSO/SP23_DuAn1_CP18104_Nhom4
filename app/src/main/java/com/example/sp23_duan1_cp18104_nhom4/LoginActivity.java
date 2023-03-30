@@ -11,7 +11,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import com.example.sp23_duan1_cp18104_nhom4.Fragment.doiMkFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class LoginActivity extends AppCompatActivity {
-    TextView dk;
+    TextView dk,quenmk;
     Button btn_dangnhap;
     EditText edEmail,edPassword;
     FirebaseAuth auth;
@@ -30,18 +32,22 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle("ĐĂNG NHẬP");
-        //        auth = FirebaseAuth.getInstance();
-//        if(auth.getCurrentUser()!= null){
-//            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//            finish();
-//        }
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+
         edEmail = findViewById(R.id.edEmail);
         edPassword = findViewById(R.id.edPassword);
         dk = findViewById(R.id.dk);
+        quenmk = findViewById(R.id.tvquenmk);
         btn_dangnhap = findViewById(R.id.btnLogin);
         auth = FirebaseAuth.getInstance();
+        quenmk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new doiMkFragment();
+                fragment.getActivity();
+
+
+            }
+        });
         btn_dangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

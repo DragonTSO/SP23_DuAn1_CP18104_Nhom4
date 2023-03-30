@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivHinh"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/monan1"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beef Steak"
+        android:id="@+id/txtTen"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#2B2B2B"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="250 000 VNĐ"
+        android:id="@+id/txtGiaa"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#C50303"/>
+</LinearLayout>

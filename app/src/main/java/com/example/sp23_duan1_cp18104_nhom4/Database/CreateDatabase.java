@@ -11,6 +11,7 @@ public class CreateDatabase extends SQLiteOpenHelper {
         super(context, "ACE RESTAURANT", null, 1);
     }
 
+    //
     public static String TBL_BAN = "BAN";
     public static String TBL_DONDAT = "DONDAT";
     //Bảng bàn
@@ -29,6 +30,11 @@ public class CreateDatabase extends SQLiteOpenHelper {
             "TenMon TEXT not null ," +
             "Soluong INTEGER not null ," +
             "Gia INTEGER not null );";
+    //bảng nhân viên
+    public static final String DB_QLNV = "CREATE TABLE QLNV(" +
+            "maNV INTEGER primary key autoincrement," +
+            "hoTen TEXT not null, " +
+            "viTri TEXT not null);";
 
 
 
@@ -39,17 +45,17 @@ public class CreateDatabase extends SQLiteOpenHelper {
         String tblDONDAT = "CREATE TABLE " +TBL_DONDAT+ " ( " +TBL_DONDAT_MADONDAT+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 +TBL_DONDAT_MABAN+ " INTEGER, " + " INTEGER, " +TBL_DONDAT_NGAYDAT+ " TEXT, "+TBL_DONDAT_TONGTIEN+" TEXT,"
                 +TBL_DONDAT_TINHTRANG+ " TEXT )" ;
-
-
         db.execSQL(tblBAN);
         db.execSQL(tblDONDAT);
         db.execSQL(DB_MENU);
-
+        db.execSQL(DB_QLNV);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS MENU");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS QLNV");
+
     }
     public SQLiteDatabase open(){
         return this.getWritableDatabase();
