@@ -2,6 +2,7 @@ package com.example.sp23_duan1_cp18104_nhom4.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,13 +12,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.sp23_duan1_cp18104_nhom4.DAO.BanAnDAO;
 import com.example.sp23_duan1_cp18104_nhom4.DAO.DonDatDAO;
 import com.example.sp23_duan1_cp18104_nhom4.DTO.BanAnDTO;
 import com.example.sp23_duan1_cp18104_nhom4.DTO.DonDatDTO;
-import com.example.sp23_duan1_cp18104_nhom4.MainActivity;
+import com.example.sp23_duan1_cp18104_nhom4.Fragment.MenuFragment;
 
+import com.example.sp23_duan1_cp18104_nhom4.MainActivity;
 import com.example.sp23_duan1_cp18104_nhom4.PaymentActivity;
 import com.example.sp23_duan1_cp18104_nhom4.R;
 
@@ -135,12 +138,10 @@ public class AdapterDisplayTable extends BaseAdapter implements View.OnClickList
                 Intent getIHome = ((MainActivity)context).getIntent();
                 int manv = getIHome.getIntExtra("manv",0);
                 String tinhtrang = banAnDAO.LayTinhTrangBanTheoMa(maban);
-
                 if(tinhtrang.equals("false")){
                     //Thêm bảng gọi món và update tình trạng bàn
                     DonDatDTO donDatDTO = new DonDatDTO();
                     donDatDTO.setMaBan(maban);
-                    donDatDTO.setMaNV(manv);
                     donDatDTO.setNgayDat(ngaydat);
                     donDatDTO.setTinhTrang("false");
                     donDatDTO.setTongTien("0");
@@ -148,7 +149,9 @@ public class AdapterDisplayTable extends BaseAdapter implements View.OnClickList
                     long ktra = donDatDAO.ThemDonDat(donDatDTO);
                     banAnDAO.CapNhatTinhTrangBan(maban,"true");
                     if(ktra == 0){ Toast.makeText(context,context.getResources().getString(R.string.add_failed),Toast.LENGTH_SHORT).show(); }
+
                 }
+
 
 
             case R.id.img_customtable_ThanhToan:
@@ -157,7 +160,7 @@ public class AdapterDisplayTable extends BaseAdapter implements View.OnClickList
                 iThanhToan.putExtra("maban",maban);
                 iThanhToan.putExtra("tenban",tenban);
                 iThanhToan.putExtra("ngaydat",ngaydat);
-                context.startActivity(iThanhToan);
+              context.startActivity(iThanhToan);
                 break;
         }
     }

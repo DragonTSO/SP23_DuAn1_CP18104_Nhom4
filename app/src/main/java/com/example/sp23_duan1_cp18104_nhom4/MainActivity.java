@@ -20,7 +20,6 @@ import com.example.sp23_duan1_cp18104_nhom4.Adapter.HomeAdapter;
 import com.example.sp23_duan1_cp18104_nhom4.DTO.HomeDTO;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.BanAnFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.DoanhThuFragment;
-import com.example.sp23_duan1_cp18104_nhom4.Fragment.HoaDonFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.KhachHangFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.MenuFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.NhanVienFragment;
@@ -81,10 +80,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         View header = navigationView.getHeaderView(0);
         tv_header = header.findViewById(R.id.txtUsser);
         tv_header.setText("ACE RESTAURANT");
-
-
-
-
         navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
     }
 
@@ -94,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_HD) {
             //hiển thị màn hình bài 1
             toolbar.setTitle("Quản lý Hóa Đơn");
-            replaceFragment(new HoaDonFragment());
+            startActivity(new Intent(MainActivity.this,Bill.class));
             //  replaceFragment();
         } else if (id == R.id.nav_menu) {
             // hiển thị màn hình bài 2
@@ -102,8 +97,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             replaceFragment(new MenuFragment());
             // replaceFragment();
         } else if (id == R.id.nav_db) {
-
-            toolbar.setTitle("Quản lý BÀn");
 
             toolbar.setTitle("Quản lý bàn");
 

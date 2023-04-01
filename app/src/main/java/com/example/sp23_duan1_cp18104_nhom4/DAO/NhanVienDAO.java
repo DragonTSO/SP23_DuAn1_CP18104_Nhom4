@@ -39,20 +39,22 @@ public class NhanVienDAO {
     public List<NhanVien> getData(String sql, String...selectionArgs){
         List<NhanVien> list = new ArrayList<>();
         Cursor c = db.rawQuery(sql, selectionArgs);
-        while (c.moveToNext()){
+        while (c.moveToFirst()){
             NhanVien obj = new NhanVien();
             obj.setMaTV(Integer.parseInt(c.getString(c.getColumnIndex("maNV"))));
             obj.setHoTen(c.getString(c.getColumnIndex("hoTen")));
             obj.setViTri(c.getString(c.getColumnIndex("viTri")));
             list.add(obj);
         }
+        c.moveToNext();
+
         return list;
     }
     public List<NhanVien> getAll(){
         String sql = "SELECT * FROM QLNV";
         return getData(sql);
     }
-    public NhanVien getID(String id)   {
+    public NhanVien getID(String id){
         String sql = "SELECT * FROM  QLNV WHERE maNV=?" ;
         List<NhanVien> list = getData(sql,id);
         return list.get(0);

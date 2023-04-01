@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DonDatDAO {
-
     SQLiteDatabase database;
     public DonDatDAO(Context context){
         CreateDatabase createDatabase = new CreateDatabase(context);
@@ -44,7 +43,7 @@ public class DonDatDAO {
             donDatDTO.setMaBan(cursor.getInt(cursor.getColumnIndex(CreateDatabase.TBL_DONDAT_MABAN)));
             donDatDTO.setTongTien(cursor.getString(cursor.getColumnIndex(CreateDatabase.TBL_DONDAT_TONGTIEN)));
             donDatDTO.setTinhTrang(cursor.getString(cursor.getColumnIndex(CreateDatabase.TBL_DONDAT_TINHTRANG)));
-            donDatDTO.setNgayDat(cursor.getString(cursor.getColumnIndex(CreateDatabase.TBL_DONDAT_NGAYDAT)));
+            donDatDTO.setNgayDat(cursor.getString(cursor.getColumnIndex(CreateDatabase.TBL_DONDAT_NGAYDAT)));;
             donDatDTOS.add(donDatDTO);
 
             cursor.moveToNext();
