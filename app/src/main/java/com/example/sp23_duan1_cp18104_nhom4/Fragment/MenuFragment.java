@@ -1,12 +1,16 @@
 package com.example.sp23_duan1_cp18104_nhom4.Fragment;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -36,6 +40,9 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
 //    private ListView listView;
     private MenuRecycleAdapter adapter;
     private ArrayList<Menu>list=new ArrayList<>();
+    private static final int SELECT_IMAGE = 100;
+    private ImageView img_update_mon_an;
+
     public MenuFragment() {
         // Required empty public constructor
     }
@@ -79,6 +86,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
         ed_gia = v.findViewById(R.id.edt_Gia);
         btn_luu = v.findViewById(R.id.btnokmenu);
         btn_huy = v.findViewById(R.id.btncanclemenu);
+        img_update_mon_an = v.findViewById(R.id.img_update_monan);
+
         builder.setView(v);
         AlertDialog alertDialog = builder.create();
         btn_luu.setOnClickListener(v1 -> {
@@ -106,9 +115,26 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
 
             }
         });
+        img_update_mon_an.setOnClickListener(v1 -> {
+            Intent intent = new Intent(Intent.ACTION_PICK,
+                    android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(intent, SELECT_IMAGE);
+        });
+
         alertDialog.show();
 
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == SELECT_IMAGE && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
+            Uri uri = data.getData();
+            img_update_mon_an.setImageURI(uri);
+        }
+    }
+
 
     @Override
     public void onResume() {
