@@ -33,7 +33,7 @@ public class MenuDAO {
         return 1;
     }
     public ArrayList<Menu> getAllMenu(){
-        Cursor cursor = database.rawQuery("SELECT *FROM MENU",null);
+        Cursor cursor = database.rawQuery("SELECT * FROM MENU",null);
         ArrayList<Menu> list = new ArrayList<>();
         if(cursor.getCount()!=0){
             cursor.moveToFirst();

@@ -20,7 +20,6 @@ import com.example.sp23_duan1_cp18104_nhom4.Adapter.HomeAdapter;
 import com.example.sp23_duan1_cp18104_nhom4.DTO.HomeDTO;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.BanAnFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.DoanhThuFragment;
-import com.example.sp23_duan1_cp18104_nhom4.Fragment.HoaDonFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.KhachHangFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.MenuFragment;
 import com.example.sp23_duan1_cp18104_nhom4.Fragment.NhanVienFragment;
@@ -48,22 +47,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         frameLayout = findViewById(R.id.frameLayout);
         toolbar = findViewById(R.id.toolBar);
         navigationView = findViewById(R.id.navigationView);
-        GridView gridView = findViewById(R.id.gridView);
+//        GridView gridView = findViewById(R.id.gridView);
 
-        ArrayList<HomeDTO> list = new ArrayList<>();
-        list.add(new HomeDTO(R.drawable.bobft,"Beef Steak","90 000 VNĐ"));
-        list.add(new HomeDTO(R.drawable.bohamraucu,"Bò Hầm Rau Củ","70 000 VNĐ"));
-        list.add(new HomeDTO(R.drawable.myy,"Mỳ Ý","50 000 VNĐ"));
-        list.add(new HomeDTO(R.drawable.khoaitaychien,"Khoai Tây Chiên","30 000 VNĐ"));
-        list.add(new HomeDTO(R.drawable.thitlonchienxu,"Thịt Kho Tàu","30 000 VNĐ"));
-        list.add(new HomeDTO(R.drawable.suonchuangot,"Sườn Xào Chua Ngọt","35 000 VNĐ"));
-        list.add(new HomeDTO(R.drawable.gachienmamtoi,"Gà Chiên Mắm ","65 000 VNĐ"));
-        list.add(new HomeDTO(R.drawable.banhbotloc,"Bánh Bột Lọc","25 000 VNĐ"));
-        list.add(new HomeDTO(R.drawable.comtam,"Cơm Tấm","45 000 VNĐ"));
-        list.add(new HomeDTO(R.drawable.thitlonchienxu,"Thịt Lợn Chiên","50 000 VNĐ"));
+//        ArrayList<HomeDTO> list = new ArrayList<>();
+//        list.add(new HomeDTO(R.drawable.bobft,"Beef Steak","90 000 VNĐ"));
+//        list.add(new HomeDTO(R.drawable.bohamraucu,"Bò Hầm Rau Củ","70 000 VNĐ"));
+//        list.add(new HomeDTO(R.drawable.myy,"Mỳ Ý","50 000 VNĐ"));
+//        list.add(new HomeDTO(R.drawable.khoaitaychien,"Khoai Tây Chiên","30 000 VNĐ"));
+//        list.add(new HomeDTO(R.drawable.thitlonchienxu,"Thịt Kho Tàu","30 000 VNĐ"));
+//        list.add(new HomeDTO(R.drawable.suonchuangot,"Sườn Xào Chua Ngọt","35 000 VNĐ"));
+//        list.add(new HomeDTO(R.drawable.gachienmamtoi,"Gà Chiên Mắm ","65 000 VNĐ"));
+//        list.add(new HomeDTO(R.drawable.banhbotloc,"Bánh Bột Lọc","25 000 VNĐ"));
+//        list.add(new HomeDTO(R.drawable.comtam,"Cơm Tấm","45 000 VNĐ"));
+//        list.add(new HomeDTO(R.drawable.thitlonchienxu,"Thịt Lợn Chiên","50 000 VNĐ"));
 
-        HomeAdapter adapter = new HomeAdapter(list,this);
-        gridView.setAdapter(adapter);
+//        HomeAdapter adapter = new HomeAdapter(list,this);
+//        gridView.setAdapter(adapter);
 
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);
@@ -81,10 +80,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         View header = navigationView.getHeaderView(0);
         tv_header = header.findViewById(R.id.txtUsser);
         tv_header.setText("ACE RESTAURANT");
-
-
-
-
         navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
     }
 
@@ -94,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_HD) {
             //hiển thị màn hình bài 1
             toolbar.setTitle("Quản lý Hóa Đơn");
-            replaceFragment(new HoaDonFragment());
+            startActivity(new Intent(MainActivity.this,Bill.class));
             //  replaceFragment();
         } else if (id == R.id.nav_menu) {
             // hiển thị màn hình bài 2
@@ -102,8 +97,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             replaceFragment(new MenuFragment());
             // replaceFragment();
         } else if (id == R.id.nav_db) {
-
-            toolbar.setTitle("Quản lý BÀn");
 
             toolbar.setTitle("Quản lý bàn");
 
@@ -135,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             replaceFragment(new doiMkFragment());
             // replaceFragment();
         } else if (id == R.id.nav_dx) {
-            finish();
+            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
         }
         drawerLayout.closeDrawer(navigationView);
         return true;

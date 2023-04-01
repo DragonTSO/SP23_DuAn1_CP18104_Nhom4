@@ -78,7 +78,6 @@ public class  BanAnFragment extends Fragment {
                 }
             });
 
-    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ban_an,container,false);
@@ -94,11 +93,9 @@ public class  BanAnFragment extends Fragment {
         return view;
     }
 
-
-
     //tạo ra context menu khi longclick
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(ContextMenu menu,View v,ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         getActivity().getMenuInflater().inflate(R.menu.edit_context_menu,menu);
     }

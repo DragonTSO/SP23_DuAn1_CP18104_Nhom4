@@ -54,8 +54,6 @@ public class NhanVienFragment extends Fragment {
             }
         });
 
-
-
         lvThanhVien.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -68,7 +66,6 @@ public class NhanVienFragment extends Fragment {
         });
         return v;
     }
-
     void capNhatLv() {
         list = (ArrayList<NhanVien>) dao.getAll();
         adapter = new NhanVienAdapter(getActivity(), list);
@@ -155,9 +152,6 @@ public class NhanVienFragment extends Fragment {
         });
         dialog.show();
     }
-
-
-
 
     public int validate() {
         int check = 1;
