@@ -19,15 +19,12 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sp23_duan1_cp18104_nhom4.Adapter.AdapterDisplayTable;
 import com.example.sp23_duan1_cp18104_nhom4.AddTableActivity;
 import com.example.sp23_duan1_cp18104_nhom4.DAO.BanAnDAO;
-import com.example.sp23_duan1_cp18104_nhom4.DTO.BanAnDTO;
+import com.example.sp23_duan1_cp18104_nhom4.Database.DTO.BanAnDTO;
 import com.example.sp23_duan1_cp18104_nhom4.EditTableActivity;
 import com.example.sp23_duan1_cp18104_nhom4.MainActivity;
 import com.example.sp23_duan1_cp18104_nhom4.R;
@@ -35,7 +32,7 @@ import com.example.sp23_duan1_cp18104_nhom4.R;
 import java.util.List;
 
 
-public class BanAnFragment extends Fragment {
+public class  BanAnFragment extends Fragment {
     public static BanAnFragment newInstance( ) {
         BanAnFragment fragment = new BanAnFragment();
 

@@ -14,8 +14,8 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.sp23_duan1_cp18104_nhom4.DAO.BanAnDAO;
 import com.example.sp23_duan1_cp18104_nhom4.DAO.DonDatDAO;
-import com.example.sp23_duan1_cp18104_nhom4.DTO.BanAnDTO;
-import com.example.sp23_duan1_cp18104_nhom4.DTO.DonDatDTO;
+import com.example.sp23_duan1_cp18104_nhom4.Database.DTO.BanAnDTO;
+import com.example.sp23_duan1_cp18104_nhom4.Database.DTO.DonDatDTO;
 import com.example.sp23_duan1_cp18104_nhom4.MainActivity;
 
 import com.example.sp23_duan1_cp18104_nhom4.PaymentActivity;

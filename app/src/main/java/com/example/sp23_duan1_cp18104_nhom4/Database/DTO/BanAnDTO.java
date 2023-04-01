@@ -1,4 +1,4 @@
-package com.example.sp23_duan1_cp18104_nhom4.DTO;
+package com.example.sp23_duan1_cp18104_nhom4.Database.DTO;
 
 public class BanAnDTO {
 

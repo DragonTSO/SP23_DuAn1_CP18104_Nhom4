@@ -6,7 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.sp23_duan1_cp18104_nhom4.DTO.DonDatDTO;
+import com.example.sp23_duan1_cp18104_nhom4.Database.DTO.DonDatDTO;
 import com.example.sp23_duan1_cp18104_nhom4.Database.CreateDatabase;
 
 import java.util.ArrayList;

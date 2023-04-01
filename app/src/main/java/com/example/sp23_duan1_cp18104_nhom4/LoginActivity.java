@@ -1,5 +1,6 @@
 package com.example.sp23_duan1_cp18104_nhom4;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,12 +22,13 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class LoginActivity extends AppCompatActivity {
-    TextView dk,quenmk;
+    TextView dk,quenmk,sKip;
     Button btn_dangnhap;
     EditText edEmail,edPassword;
     FirebaseAuth auth;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,14 @@ public class LoginActivity extends AppCompatActivity {
         dk = findViewById(R.id.dk);
         quenmk = findViewById(R.id.tvquenmk);
         btn_dangnhap = findViewById(R.id.btnLogin);
+        sKip = findViewById(R.id.skip);
+        sKip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentskip = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intentskip);
+            }
+        });
         auth = FirebaseAuth.getInstance();
         quenmk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +98,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
 //
 
 }

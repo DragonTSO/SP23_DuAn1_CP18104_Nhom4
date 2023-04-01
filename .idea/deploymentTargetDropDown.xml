@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\Admin\.android\emu-update-last-check.ini" />
+            <value value="C:\Users\Zun\.android\avd\Pixel_4_XL_API_30.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2023-03-23T08:30:26.568204800Z" />
+    <timeTargetWasSelectedWithDropDown value="2023-04-01T05:17:07.784379300Z" />
   </component>
 </project>

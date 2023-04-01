@@ -82,25 +82,32 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
         builder.setView(v);
         AlertDialog alertDialog = builder.create();
         btn_luu.setOnClickListener(v1 -> {
-            menuDAO = new MenuDAO(getActivity());
-            Menu menu = new Menu();
-            menu.setTenMon(ed_TenMon.getText().toString());
-            menu.setSoluong(Integer.parseInt(ed_Soluong.getText().toString()));
-            menu.setGia(Integer.parseInt(ed_gia.getText().toString()));
-            int kq = menuDAO.Insert(menu);
-            if (kq == -1) {
-                Toast.makeText(getActivity(), "Thêm thất bại", Toast.LENGTH_SHORT).show();
+            if (ed_TenMon.length()==0){
+                Toast.makeText(getActivity(), "Bạn phải điền tên món ăn ", Toast.LENGTH_SHORT).show();
+            }else if (ed_Soluong.length()==0){
+                Toast.makeText(getActivity(), "Bạn phải điền số lượng  món ăn ", Toast.LENGTH_SHORT).show();
+            }else if (ed_gia.length()==0){
+                Toast.makeText(getActivity(), "Bạn phải điền giá  món ăn ", Toast.LENGTH_SHORT).show();
+            }else {
+                menuDAO = new MenuDAO(getActivity());
+                Menu menu = new Menu();
+                menu.setTenMon(ed_TenMon.getText().toString());
+                menu.setSoluong(Integer.parseInt(ed_Soluong.getText().toString()));
+                menu.setGia(Integer.parseInt(ed_gia.getText().toString()));
+                int kq = menuDAO.Insert(menu);
+                if (kq == -1) {
+                    Toast.makeText(getActivity(), "Thêm thất bại", Toast.LENGTH_SHORT).show();
+                }
+                if (kq == 1) {
+                    Toast.makeText(getActivity(), "Thêm thành công", Toast.LENGTH_SHORT).show();
+                }
+                onResume();
+                alertDialog.cancel();
+
             }
-            if (kq == 1) {
-                Toast.makeText(getActivity(), "Thêm thành công", Toast.LENGTH_SHORT).show();
-            }
-            onResume();
-            alertDialog.cancel();
-        });
-        btn_huy.setOnClickListener(v1 -> {
-            alertDialog.cancel();
         });
         alertDialog.show();
+
     }
 
     @Override
