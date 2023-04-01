@@ -29,6 +29,7 @@
         <activity
             android:name=".SigUpActivity"
             android:exported="false" />
+
         <activity
             android:name=".manhinhcho"
             android:exported="true">
